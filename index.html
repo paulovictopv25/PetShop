@@ -40,15 +40,22 @@
 
     <form action="" class="login-form">
         <h3>Entrar</h3>
-        <input type="email" name="" placeholder="Digite seu e-mail" id="" class="box">
-        <input type="password" name="" placeholder="Coloque sua senha" id="" class="box">
+
+        <div id='msgError'></div>
+        <div id='msgSuccess'></div>
+        
+        <input type="nome" name="" placeholder="Digite seu Nome" id="nome" class="box" paceholder='' required>
+        <label id='nome' for='nome'></label>
+        <input type="password" name="senha" placeholder="Coloque sua senha" id="senhaLabel" class="box" id='senha' paceholder='' required>
+        <label id='senhaLabel' for='senha'></label>
         <div class="remember">
             <input type="checkbox" name="" id="remember-me">
             <label for="remember-me">Lembre de mim</label>
         </div>
-        <input type="submit" value="sign in" class="btn">
+        <input onclick='entrar()' type="submit" value="Entrar" class="btn"> </input>
+        
         <div class="links">
-            <a href="#">Esqueceu a senha</a>
+            <a href="cadastro.html">Esqueceu a senha</a>
             <a href="cadastro.html">Cadastre-se</a>
         </div>
     </form>

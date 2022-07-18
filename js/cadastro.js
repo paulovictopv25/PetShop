@@ -84,13 +84,41 @@ nomedopet.addEventListener('keyup', () => {
   if(nomedopet.value.length <= 4){
     labelNomedopet.setAttribute('style', 'color: red')
     labelEndereco.innerHTML = 'Favor insira o Nome do Pet'
-    usuario.setAttribute('style', 'border-color: red')
-    validEndereco = false
+    nomedopet.setAttribute('style', 'border-color: red')
+    validNomedopet = false
   } else {
-    labelEndereco.setAttribute('style', 'color: green')
-    labelEndereco.innerHTML = 'Endereço'
-    endereco.setAttribute('style', 'border-color: green')
-    validEndereco = true
+    labelNomedopet.setAttribute('style', 'color: green')
+    labelNomedopet.innerHTML = 'Nome do Pet'
+    nomedopet.setAttribute('style', 'border-color: green')
+    validNomedopet = true
+  }
+})
+
+raca.addEventListener('keyup', () => {
+  if(raca.value.length <= 4){
+    labelRaca.setAttribute('style', 'color: red')
+    labelRaca.innerHTML = 'Favor insira o Nome do Pet'
+    raca.setAttribute('style', 'border-color: red')
+    validRaca = false
+  } else {
+    labelRaca.setAttribute('style', 'color: green')
+    labelRaca.innerHTML = 'Raça do Animal'
+    raca.setAttribute('style', 'border-color: green')
+    validRaca = true
+  }
+})
+
+idadepet.addEventListener('keyup', () => {
+  if(idadepet.value.length <= 0){
+    labelIdadedopet.setAttribute('style', 'color: red')
+    labelIdadedopet.innerHTML = 'Favor insira a Idade do PET'
+    idadepet.setAttribute('style', 'border-color: red')
+    validIdadedopet = false
+  } else {
+    labelIdadedopet.setAttribute('style', 'color: green')
+    labelIdadedopet.innerHTML = 'Idade'
+    idadepet.setAttribute('style', 'border-color: green')
+    validIdadedopet = true
   }
 })
 
@@ -123,14 +151,19 @@ confirmSenha.addEventListener('keyup', () => {
 })
 
 function cadastrar(){
-  if(validNome && validUsuario && validSenha && validConfirmSenha){
+  if(validNome && validEndereco && validNomedopet && validRaca && validIdadedopet && validUsuario && validSenha && validConfirmSenha){
     let listaUser = JSON.parse(localStorage.getItem('listaUser') || '[]')
     
     listaUser.push(
     {
       nomeCad: nome.value,
+      enderecoCad: endereco.value,
+      nomedopetCad: nomedopet.value,
+      racaCad: raca.value,
+      idadepetCad: idadepet.value,
       userCad: usuario.value,
       senhaCad: senha.value
+
     }
     )
     
@@ -174,3 +207,4 @@ btnConfirm.addEventListener('click', ()=>{
     inputConfirmSenha.setAttribute('type', 'password')
   }
 })
+
